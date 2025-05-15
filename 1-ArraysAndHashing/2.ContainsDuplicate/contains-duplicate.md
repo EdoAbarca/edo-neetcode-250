@@ -97,4 +97,4 @@ for (let i = 1; i < nums.length; i++) {
 return false;
 ```
 
-- For this situation, hashing is the most optimized way to solve the problem (Check the code for the solution)
+- Hashing is the most optimized way to solve this problem
