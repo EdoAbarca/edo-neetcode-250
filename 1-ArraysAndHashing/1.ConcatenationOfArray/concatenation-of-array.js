@@ -7,8 +7,8 @@ var getConcatenation = function(nums) {
     //let ans = nums.concat(nums);
     //return ans;
 
-    //Elegant, one-liner but discarded for solution
-    //for (let i = 0; i < 2*n; i++){
+    //Elegant, one-liner but discarded for loop solution
+    //for (let i = 0; i < 2*n; i++){ //This is the problem -> 0 <= i < n
     //    ans[i] = nums[i % n];
     //}
     
@@ -26,5 +26,7 @@ var getConcatenation = function(nums) {
     for(let i = 0; i < n; i++){
         ans.push(nums[i]);
     }
+
+    //Process finished, return the concatenated array (ans)
     return ans;
 };

@@ -5,7 +5,8 @@
 
 **Leetcode Link:** [https://leetcode.com/problems/concatenation-of-array/description/](https://leetcode.com/problems/concatenation-of-array/description/)
 
-**Status:** Ongoing
+**Status:** Finished, open for suggestions.
+
 ---
 
 ## Problem Statement
@@ -44,12 +45,23 @@ Constraints:
 ## Approach
 
 ### Thought Process
-- _Explain how you approached the problem step-by-step._
-- _What did you consider first? Any edge cases you thought about?_
+
+First of all, as the problem clearly states, an array 'ans' has to be returned, so that will be the DS used. 'ans' consists of 'nums' array + 'nums' array, all concatenated based on its order.
+
+Here’s how I approached the problem:
+
+1. Declare the 'ans' array as an empty array
+2. Loop the 'nums' array to push it's numbers into the current 'ans' array (copy)
+3. Loop the 'nums' array to push it's numbers into the current 'ans' array
+4. Return the 'ans' array (copy and concatenate)
+
+There are more elegant, one-liner solutions, but they may be harder to understand and even maintain, and they don't actually improve performance, in terms of Big O. I aim to analyze them anyway, but I'll proceed under the previous steps shown.
+
+No hashing is needed since there's no need to check for previous data or duplicates.
 
 ### Strategy Used
-- Brute-force? Optimized? 
-- Any pattern? (e.g. Hashing, Two Pointers, Sliding Window)
+- Brute-force
+- Array
 
 ---
 
@@ -65,5 +77,18 @@ Constraints:
 ---
 
 ## Notes / Learnings
-- _What did you learn or reinforce by solving this problem?_  
-- _Any mistake you made or something that surprised you?_
+ - This is the first alternative solution:
+```javascript
+let ans = nums.concat(nums);
+return ans;
+```
+This approach leverages the built-in `concat` method in JavaScript, which concatenates two arrays. It is concise and achieves the same result as the brute-force approach but in a single line of code. The time complexity remains O(n) since the `concat` method iterates through the array elements.
+- This is the second alternative but discarded solution:
+```javascript
+let ans = [];
+for (let i = 0; i < 2 * n; i++) {
+  ans[i] = nums[i % n];
+}
+```
+This approach uses a `for` loop to manually construct the concatenated array. The loop runs from `0` to `2 * n - 1`, where `n` is the length of the original array `nums`. The modulo operator (`%`) is used to cycle through the indices of `nums`, effectively repeating its elements. While this approach also has a time complexity of O(n), it is less concise and less readable compared to the first solution using the `concat` method.
+
