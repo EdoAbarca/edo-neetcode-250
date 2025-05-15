@@ -1,13 +1,43 @@
-# Problem: [Problem Name]
-**Category:** [e.g. Arrays & Hashing]  
-**Difficulty:** [Easy | Medium | Hard]  
-**Leetcode Link:** [https://leetcode.com/problems/problem-name](https://leetcode.com/problems/problem-name)
+# Problem: 1929. Concatenation of Array
+**Category:** Arrays & Hashing
 
+**Difficulty:** Easy  
+
+**Leetcode Link:** [https://leetcode.com/problems/concatenation-of-array/description/](https://leetcode.com/problems/concatenation-of-array/description/)
+
+**Status:** Ongoing
 ---
 
 ## Problem Statement
-> _Briefly summarize the problem in your own words._  
-> _What is the input? Output? Are there constraints?_
+Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
+
+Specifically, ans is the concatenation of two nums arrays.
+
+Return the array ans.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,1]
+Output: [1,2,1,1,2,1]
+Explanation: The array ans is formed as follows:
+- ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
+- ans = [1,2,1,1,2,1]
+Example 2:
+
+Input: nums = [1,3,2,1]
+Output: [1,3,2,1,1,3,2,1]
+Explanation: The array ans is formed as follows:
+- ans = [nums[0],nums[1],nums[2],nums[3],nums[0],nums[1],nums[2],nums[3]]
+- ans = [1,3,2,1,1,3,2,1]
+ 
+
+Constraints:
+
+- n == nums.length
+- 1 <= n <= 1000
+- 1 <= nums[i] <= 1000
 
 ---
 
@@ -25,12 +55,12 @@
 
 ## Results
 ### Complexity Analysis
-- **Time Complexity:** O(...)
-- **Space Complexity:** O(...)
+- **Time Complexity:** O(n)
+- **Space Complexity:** O(n)
 
 ### Time execution
-- **Time spent**:
-- **Memory used**:
+- **Time spent**: 2 ms (31.57%)
+- **Memory used**: 59.69 MB (8.57%)
 
 ---
 
