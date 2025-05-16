@@ -25,3 +25,24 @@ var isAnagram = function(s, t) {
 /*
 Note: This solution is not the most efficient, as I should've used hash instead of sorting. Will upload ASAP
 */
+
+//Solution using map hash (T.B.A.)
+function areAnagrams(s, t) {
+  if (s.length !== t.length) return false;
+
+  const freqS = new Map();
+  const freqT = new Map();
+
+  for (let char of s) {
+    freqS.set(char, (freqS.get(char) || 0) + 1);
+  }
+  for (let char of t) {
+    freqT.set(char, (freqT.get(char) || 0) + 1);
+  }
+
+  for (let char in freqS) {
+    if (freqS[char] !== freqT[char]) return false;
+  }
+
+  return true;
+}
