@@ -39,25 +39,29 @@ Don't struggle thinking about "how do I match both strings, in terms of order ma
 
 That being said, there are 2 options:
 1. Sorting and checking that both strings are the same
-2. Hashing both char counts and then comparing both hashed counts
+2. Hashing both char counts and then comparing both hashed chars and counts
 
-I tried sorting both input arrays, and, although it's valid and got submitted, I got probably the worst numbers since I've been practicing in Leetcode (check 'Notes / Learnings' for that). So, in order to optimize that, let's try the hashing approach (T.B.A.)...
+As I already tried the sorting approach with poor performance results, I tried the hashing approach, getting better results, which goes this way:
+
+1. Count every distinctive char in both string separately
+2. Compare both hash's length
+3. Compare both hash's char count
+4. If 3 and 4 passed, the 
 
 ### Strategy Used
-- Brute force (Will redo it ASAP)
-- Sorting
-- Hashing (Soon)
+- Optimized
+- Hashing
 
 ---
 
 ## Results
 ### Complexity Analysis
-- **Time Complexity:**
-- **Space Complexity:** 
+- **Time Complexity:** 18 ms (43.44%)
+- **Space Complexity:** 60.98 mb (12.22%)
 
 ### Time execution
-- **Time spent:**
-- **Memory used:**
+- **Time spent:** O(n)
+- **Memory used:** O(n)
 
 ---
 
@@ -67,3 +71,4 @@ I tried sorting both input arrays, and, although it's valid and got submitted, I
     - **Memory used:**  63.27 mb (5.45%)
     - **Time Complexity:** O(n*log(n)) (O(n^2) worst case)
     - **Space Complexity:** O(n)
+ - Map it's better for hashing more complex data structures, where Set can only store single values without repetition
