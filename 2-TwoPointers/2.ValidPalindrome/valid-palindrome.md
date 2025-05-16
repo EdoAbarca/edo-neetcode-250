@@ -43,28 +43,31 @@ Constraints:
 ### Thought Process
 Ok so basically you can see a palindrome as a string that, when splitted in half, the string got from the right is the reversed version of the string got from the left.
 
-That said, the most straightforward way to face this problem if looping the strings, checking if the leftmost char of the string is the same as the rightmost char of the string. Only one difference is enough to discard it as a palindrome.
+That said, the most straightforward way to face this problem if looping the strings, checking if the leftmost char of the string is the same as the rightmost char of the string. Only one difference is enough to discard it as a palindrome. Also, non-alphanumerical characters should be skipped and upper-case characters should be lower casered for comparision. All of this in-place, as there's no need to create another string, so the space complexity stays constant.
 
-However, that's not enough right now (or might be, but the approach might need some tweaks). The input says "alphanumerical numbers" (A-Z, a-z, 0-9), and, as the examples state, there are commas, two points, spaces and maybe more. A pre-processing over the input string seems to be unavoidable for now. As there's no constraint about space complexity, a new string, without any non-alphanumerical characters should be created (string are inmutable, just in case).
 
 ### Strategy Used
 - Two pointers
-- Brute-force
-- String pre-processing
+- Optimized
+- In-place
 
 ---
 
 ## Results
 ### Complexity Analysis
 - **Time Complexity:** O(n)
-- **Space Complexity:** O(n)
+- **Space Complexity:** O(1)
 
 ### Time execution
-- **Time spent:** 14 ms (9.41%)
-- **Memory used:** 64.88 mb (5.23%)
+- **Time spent:** 6 ms (48.10%)
+- **Memory used:** 59.56 mb (28.93%)
 
 ---
 
 ## Notes / Learnings
-- A non-preprocessed, in-place version should be tried -> O(n) to O(1) in space complexity
+
 - Regex is such a nice way to test chars without using nested, hard-to-read logic operations inside a if-else statement
+- The input says "alphanumerical numbers" (A-Z, a-z, 0-9), and, as the examples state, there are commas, two points, spaces and maybe more. I aimed to pre-process the input string. As there's no constraint about space complexity, a new string, without any non-alphanumerical characters was be created (string are inmutable, just in case), increasing the space complexity into an unnecessary O(n)
+- The first algorithm proposed performed poorly (14 ms (9.41%), 64.88 mb (5.23%))
+- A non-preprocessed, in-place version was chosen later -> O(n) to O(1) in space complexity
+- However, the numbers aren't convincing at all, probably there's a better solution...
