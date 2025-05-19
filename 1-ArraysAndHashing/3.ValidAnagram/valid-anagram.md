@@ -46,7 +46,7 @@ As I already tried the sorting approach with poor performance results, I tried t
 1. Count every distinctive char in both string separately
 2. Compare both hash's length
 3. Compare both hash's char count
-4. If 3 and 4 passed, the 
+4. If 3 and 4 are equal in all cases, the string is an anagram, return true
 
 ### Strategy Used
 - Optimized
@@ -66,9 +66,10 @@ As I already tried the sorting approach with poor performance results, I tried t
 ---
 
 ## Notes / Learnings
- - What I got from the sorting execution:
+ - Numbers obtained from the sorting solution submit:
     - **Time spent:** 52 ms (5.02%)
     - **Memory used:**  63.27 mb (5.45%)
     - **Time Complexity:** O(n*log(n)) (O(n^2) worst case)
     - **Space Complexity:** O(n)
- - Map it's better for hashing more complex data structures, where Set can only store single values without repetition
+ - Map it's better for hashing more complex data structures (for instance and definition, (key, value) data), where Set can only hash single values without repetition
+ - Still, space complexity isn't convincing at all, meaning there are better solutions...

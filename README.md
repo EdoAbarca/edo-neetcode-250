@@ -23,6 +23,6 @@ Each folder in this repository is organized by pattern:
 
 ## ⚠️ Disclaimer
 
-All code in this repository was written by me. AI was not used to write it.  
+All code in this repository was written by me, and no AI was used in it's creation.
 Feel free to suggest improvements or reach out if you have any feedback. If you ever use any of the code, please credit me accordingly.
 
