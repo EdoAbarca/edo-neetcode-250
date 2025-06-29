@@ -5,7 +5,7 @@
 
 **Leetcode Link:** [https://leetcode.com/problems/implement-stack-using-queues](https://leetcode.com/problems/implement-stack-using-queues)
 
-**Status:** Ongoing.
+**Status:** Finished, open to suggestions.
 ---
 
 ## Problem Statement
@@ -59,41 +59,40 @@ Follow-up: Can you implement the stack using only one queue?
 As the problem states, Queues are needed to implement a Stack:
  - Queue: FIFO DS -> First In, First Out
  - Stack: LIFO DS -> Last In, First Out
-That said, the real challenge comes when the stack has to be simulated, which can be done in 2 ways:
+That said, the real challenge comes when the stack has to be simulated using one queue, which can be done in 2 ways:
 1. Using the tail (right end of the DS) as the top stack:
-    - This approach expects you to think deep about how you might insert a new element, as pop and read are straightforward O(1) operations
-    - That means an O(n-1) (n-1 = size of queue) should be performed so the elements are rotated and the expected element inserted
+    - This approach expects you to think deep about how you might push a new element, as pop and peek are straightforward O(1) operations
+    - That means an O(n) (n = size of queue) should be performed so the elements are rotated and the expected element inserted
 2. Using the head (left end of the DS) as the top stack:
-    - This approach expects you to think deep about how you might pop an element, as insert and read are straightforward O(1) operations
-    - That means an O(n-1) (n-1 = size of queue) should be performed so the elements are rotated and the expected element deleted
+    - This approach expects you to think deep about how you might pop an element, as push and peek are straightforward O(1) operations
+    - That means an O(n) (n = size of queue) should be performed so the elements are rotated and the expected element deleted
 
 
 ### Strategy Used
 
-1. Insert (for the first approach):
-    1. Queue the element
-    2. Dequeue and save the tail element
+1. Push (for the first approach):
+    1. Queue the element to be pushed
+    2. Dequeue (tail -> last element of the queue) and save
     3. Push it to the queue again
-    4. Repeat 2 and 3 until the first element pushed is the tail of the queue
+    4. Repeat 2 and 3 until the element queued in step 1 becomes the tail of the queue
 2. Pop (for the second approach):
-    1. Dequeue and save the tail element
+    1. Dequeue (tail) and save
     2. Push it to the queue again
-    3. Repeat 1 and 2 until the tail contains what once was the head of the queue
+    3. Repeat 1 and 2 until the tail (last element of the queue) holds what once was the head (first element of the queue)
     4. Dequeue
-
 
 ---
 ## Results
 ### Complexity Analysis
-- **Time Complexity:** 
-- **Space Complexity:** 
+- **Time Complexity:** O(n) when pushing, O(1) anything else
+- **Space Complexity:** O(n)
 
 ### Time execution
-- **Time spent:** 
-- **Memory used:** 
+- **Time spent:** 0ms (100.00%)
+- **Memory used:** 53.87 mb (19.59%)
 
 ---
 ## Notes / Learnings
-- The solution has not been implemented, just an overview of it's solution is done
-- Nor the approach has been chosen
-- Notes for the approach not used shall be added for reference
+- The first approach (looping over the push operation) was used to answer this exercise
+- Although the follow-up was accomplished, there's no idea what might be the 2-queues approach
+- Notes for the pop approach shall be added for reference
