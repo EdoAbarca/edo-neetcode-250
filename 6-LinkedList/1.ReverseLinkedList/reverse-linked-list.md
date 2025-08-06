@@ -66,18 +66,33 @@ Pointers used:
 
 As a loop through the whole list is needed, O(n) time will be achieved. However, as single variables will be used to traverse the list, O(1) space will be achieved.
 
+Update: I tried the recursive approach too.
+
+It works by traversing to the end of the list first, then rewiring the `next` pointers on the way back up:
+
+- **Base case:** If the node is `null` or `node.next` is `null`, return the node (this will be the new head).
+- **Recursive step:** Call the function on `node.next` until reaching the end.
+- After the call returns, reverse the link: `node.next.next = node`.
+- Set `node.next = null` to break the original link.
+- Return the new head node back up the stack.
+
 ---
 ## Results
 ### Complexity Analysis
 - **Time Complexity:** O(n)
-- **Space Complexity:** O(n)
+- **Space Complexity:**
+    - Iterative: O(1)
+    - Recursive: O(n) due to call stack
 
 ### Time execution
-- **Time spent:** 0ms (100.00%)
-- **Memory used:** 57.58 mb (49.62%)
-
+1. Iterative:
+    - **Time spent:** 0ms (100.00%)
+    - **Memory used:** 57.58 mb (49.62%)
+2. Recursive:
+    - **Time spent:** 1ms (9.81%)
+    - **Memory used:** 58.22 mb (5.89%)
+    
 ---
 ## Notes / Learnings
 - Follow-up achieved, look at the .js file for both solutions
-- Notes of the recursive results shall be added for comparision and conclusion purposes
-- Nice metrics from the iterative approach. Will the recursive version be better (or worser)?
+- Although more elegant and more aligned with the problem's structure, the recursive solution proved to be worser than the iterative one in terms of performance (and I dare say in readability terms too)
