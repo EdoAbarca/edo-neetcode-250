@@ -14,8 +14,8 @@ var reverseList = function(head) {
     if (head === null || head.next === null) return head; //empty or 1-item linked list, not worth the process
     //if not, linked list reversal shall be done
     let current = head;
-    let next_node = undefined;
-    let previous_node = undefined;
+    let next_node = null;
+    let previous_node = null;
 
     while(current !== null){ //While there are still nodes to process
         next_node = current.next; //Store the next node
