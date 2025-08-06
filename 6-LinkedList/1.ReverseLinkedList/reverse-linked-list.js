@@ -1,4 +1,5 @@
 /**
+ * Iterative approach
  * Definition for singly-linked list.
  * function ListNode(val, next) {
  *     this.val = (val===undefined ? 0 : val)
@@ -27,8 +28,21 @@ var reverseList = function(head) {
     return previous_node;
 };
 
-/*
-Recursive version:
+
+
+/**
+ * Recursive approach
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+
 var reverseList = function(head) {
     if (head === null || head.next === null) return head;//empty or 1-item linked list, not worth the process (also, base case for recursion)
     //if not, linked list reversal shall be done
@@ -38,4 +52,3 @@ var reverseList = function(head) {
     //At the end of the recursion, newHead will be the new head of the reversed linked list
     return newHead;
 };
- */
