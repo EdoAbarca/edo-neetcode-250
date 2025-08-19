@@ -65,7 +65,7 @@ A Tree is a DS which consists of a node, a custom data type that consists of:
 2. A pointer to it's left node
 3. A pointer to it's right node
 
-Now, what's an postorder traversal? It's a travel-through-tree algorithm, which distinctive core idea is to check the tree using this order: node -> left -> right.
+Now, what's an preorder traversal? It's a travel-through-tree algorithm, which distinctive core idea is to check the tree using this order: node -> left -> right.
 
 ### Strategy Used
 
