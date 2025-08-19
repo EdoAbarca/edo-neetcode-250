@@ -24,6 +24,9 @@ var inorderTraversal = function(root) {
     // Concatenate the results: left subtree, current node value, right subtree
     return left.concat([root.val], right);
 };
+//0ms (100%)/53.76MB (42.08%)
+//Time complexity: O(n) - each node is visited once
+//Space complexity: O(h) - h is the height of the tree, due to the recursion stack
 
 //Using spread operator
 var inorderTraversal = function(root) {
@@ -37,6 +40,10 @@ var inorderTraversal = function(root) {
         ...inorderTraversal(root.right)
     ];
 };
+//0ms (100%)/53.62MB (50.00%)
+//Time complexity: O(n) - each node is visited once
+//Space complexity: O(h) - h is the height of the tree, due to the recursion stack
+
 
 //Iterative solution
 var inorderTraversal = function(root) {
@@ -60,3 +67,6 @@ var inorderTraversal = function(root) {
 
     return result;
 };
+//0ms (100%)/53.00MB (84.51%)
+//Time complexity: O(n) - each node is visited once
+//Space complexity: O(n) - in the worst case, the stack can hold all nodes (e.g., a skewed tree)
